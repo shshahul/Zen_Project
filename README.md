@@ -90,6 +90,7 @@ create a streamlit project in bye using st.form(key="give name")
 **Update in database by adding Mongo_DB credentials and create update button**
 
 >>if st.form_submit_button(label='Update')
+
 >>Update = collection.insert_many("your database name")
 
 **run the streamlit**
