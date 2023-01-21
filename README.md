@@ -55,3 +55,30 @@ This parameter refers to the maximum allowed date. It has to be specified in the
 
 This parameter refers to the minimum allowed date. It has to be specified in the YYYY-MM-DD format.
   
+**After adding the required attributes in tweet_list i am saving in a dataframe**
+
+df = pd.DataFrame(tweets_list(, columns=["give the column names"])
+
+**Update the file in your Database**
+
+
+        client = MongoClient('username:password')
+        
+        db = client.Tweets_database
+        
+        collection = db.twitter_collection
+        
+        tweet_data = df.to_dict("records")
+
+
+        collection.insert_many(tweet_data)
+
+**#Now creating a GUI using streamlit**
+
+create a streamlit project in bye using st.form(key="give name")
+
+>>Run the same code in streamlit form by using streamlit input varibles
+
+**run the streamlit**
+
+streamlit run main.py
