@@ -25,12 +25,12 @@ snscrape requires Python 3.8 or higher. The Python package dependencies are inst
  
 #A Scraper for social network is called Snscraper
 
-pip install snscrape
+>>pip install snscrape
 
  '#Now creating a GUI using streamlit'
 '#install streamlit libreray'
 
-pip install streamlit
+>>pip install streamlit
 
 **#Import Requirements**
 
@@ -45,7 +45,7 @@ pip install streamlit
  The query must be specified as a Python dictionary containing a list of fields
  
  
- (from:{Content}) until:{until_date} since:{Since_date}
+ >>(from:{Content}) until:{until_date} since:{Since_date}
  
  **until**
  
@@ -57,7 +57,7 @@ This parameter refers to the minimum allowed date. It has to be specified in the
   
 **After adding the required attributes in tweet_list i am saving in a dataframe**
 
-df = pd.DataFrame(tweets_list(, columns=["give the column names"])
+>>df = pd.DataFrame(tweets_list(, columns=["give the column names"])
 
 **Update the file in your Database**
 
@@ -79,6 +79,19 @@ create a streamlit project in bye using st.form(key="give name")
 
 >>Run the same code in streamlit form by using streamlit input varibles
 
+**Download the retrive file**
+
+>>st.download_button("Download CSV",
+                       df.to_csv(),
+                       file_name = f'{file_name}',
+                       mime="text/csv")
+                       
+                       
+**Update in database by adding Mongo_DB credentials and create update button**
+
+>>if st.form_submit_button(label='Update')
+>>Update = collection.insert_many("your database name")
+
 **run the streamlit**
 
-streamlit run main.py
+>>streamlit run main.py
